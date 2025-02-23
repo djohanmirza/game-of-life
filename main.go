@@ -13,6 +13,8 @@ import (
 //	- Any live cell with more than three live neighbours dies, as if by overpopulation.
 //	- Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
+// fungsi untuk menghitung dan update keadaan sel berdasarkan rules conway's game of life
+
 func updateState(state *[][]int) [][]int {
 	updateState := make([][]int, len(*state))
 	for i, row := range *state {
@@ -37,6 +39,8 @@ func updateState(state *[][]int) [][]int {
 	return updateState
 }
 
+// fungsi untuk menghitung jumlah sel tetangga yang hidup
+
 func getCount(state *[][]int, i int, j int) int {
 	count := 0
 
@@ -57,6 +61,8 @@ func getCount(state *[][]int, i int, j int) int {
 
 	return count
 }
+
+// fungsi untuk mengubah representasi angka dalam state menjadi string
 
 func stateConvertor(state *[][]int) string {
 	output := ""
